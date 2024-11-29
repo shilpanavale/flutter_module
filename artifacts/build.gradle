@@ -1,7 +1,9 @@
-apply plugin: 'maven-publish'
+plugins {
+    id 'maven-publish'
+}
 
-group = 'com.github.shilpanavale'
-version = '1.0.0'
+group = 'com.github.shilpanavale'  // Replace with your group ID
+version = '1.0.0'  // Replace with your version
 
 publishing {
     publications {
@@ -10,11 +12,12 @@ publishing {
             artifactId = 'flutter_module'
             version = '1.0.0'
 
-            // Specify the AAR file
+            // Specify the path to your AAR file
             artifact file('flutter_release.aar')
         }
     }
+
     repositories {
-        mavenLocal()
+        mavenLocal()  // You can change this to JitPack's Maven URL later
     }
 }
