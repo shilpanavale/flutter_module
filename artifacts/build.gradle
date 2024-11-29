@@ -1,14 +1,20 @@
 apply plugin: 'maven-publish'
 
+group = 'com.github.shilpanavale'
+version = '1.0.0'
+
 publishing {
     publications {
         aar(MavenPublication) {
-            groupId = 'com.webplat' // Replace with your group name or domain
-            artifactId = 'flutter_module' // Replace with your repository name or a meaningful ID
-            version = '1.0.0' // Set your version here
+            groupId = 'com.github.shilpanavale'
+            artifactId = 'flutter_module'
+            version = '1.0.0'
 
-            // Path to the AAR file in the artifacts folder
-            artifact file('artifacts/flutter_release.aar')
+            // Specify the AAR file
+            artifact file('flutter_release.aar')
         }
+    }
+    repositories {
+        mavenLocal()
     }
 }
